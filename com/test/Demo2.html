@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>JavaScript默认参数</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		//1.1、之前的做法
+		function foo(num1){
+			if(num1==undefined){
+				num1 = 9;
+			}
+			console.log(num1);
+		}
+		foo();
+		//1.2、ECMAScript6做法
+		function foo1(num1 = 9){
+			console.log(num1);
+		}
+		foo1(8);
+
+		//2、运行时计算默认值
+		function foo2(num1 = cal()){
+			return num1;
+		}
+		function cal(){
+			return 3;
+		}
+		var a = foo2();
+		console.log(a);
+		//3、重用默认参数
+		function foo3(num1=5,num2=num1+3){
+			console.log(num2);
+		}
+		foo3();
+	</script>
+	JavaScript 学习！
+</body>
+</html>

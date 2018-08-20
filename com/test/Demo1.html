@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>第一个JavaScript</title>
+	<title>JavaScript的this</title>
 </head>
 
 <body>
 	<script type="text/javascript">
+		//this指的是函数运行时所在的环境。对于obj.foo()来说，foo运行在obj环境，所以this指向obj；对于foo()来说，foo运行在全局环境，所以this指向全局环境
 		var obj = {
 			foo:function(){
 				console.log(this.bar);
@@ -17,7 +18,9 @@
 		var bar = 2;
 		obj.foo();//1
 		foo();//2
+		
+		//參考：http://www.ruanyifeng.com/blog/2018/06/javascript-this.html
 	</script>
-	JavaScript 世界！
+	JavaScript 学习！
 </body>
 </html>

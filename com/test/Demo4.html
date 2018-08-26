@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>JavaScript的箭头函数</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		//基本語法：參數應該在小括號中傳遞。你可以創建有兩個參數的箭頭函數,如下所示
+		var add = (num1,num2)=>{return num1+num2};
+		console.info(add(4,5));
+		//如果只要傳遞一個參數，那麼括號是可選的
+		var add = num => {return num*10};
+		console.info(add(5));
+		//如果沒有參數，也要有一個空括號
+		var add = () =>{console.log("hello add")};
+		add();
+		//方法體中使用括號是可選的
+		var test = () => console.log("hello test");
+		test();
+
+		//支持rest參數
+		var add = (num1,num2,...restParam)=>{
+			console.log("restParam length:"+restParam.length);
+			var result = num1+num2;
+			return result;
+		}
+		var r = add(67,7,90,23,45);
+		console.log(r);
+		//支持默認參數
+		var add = (num1=5,num2=6)=>{
+			console.log(num1+num2);
+		}
+		add();
+
+		//箭頭函數的限制條件：1、沒有參數對象 2、不能作爲構造函數 3、沒有原型屬性
+		//參考鏈接http://www.codeceo.com/article/easy-javascript-06-arrow-function.html
+	</script>
+	JavaScript 学习！
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>JavaScript的一些坑</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		//排序 sort()在默认使用字母数字（字符串Unicode码）排序
+		console.log([1,2,20,5,10].sort());
+		console.log([1,2,20,5,10].sort((a,b)=>a-b));
+		
+		//new Date
+		console.log(new Date());
+		console.log(new Date(1,1,1));//返回 19010201。因为第一个参数表示1900年加1年，第二个参数表示这一年的第二个月（因此是二月） — 脑回路正常的人会从1开始索引 — ，第三个参数很明显是这个月的第一天
+		console.log(new Date(2018,1,1));
+
+		//replace替代
+		let s = "bob"
+		const replaced = s.replace('b', 'l')；//只替換第一個b s.replace(/b/g, 'l')替換所有字符串
+
+		
+
+
+	</script>
+	JavaScript 学习！
+</body>
+</html>

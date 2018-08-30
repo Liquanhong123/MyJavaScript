@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>JavaScript的set和get</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		
+		//基本的set和get
+		var greet = {
+			set welcome(m){
+				this.msg = this.msg + m;
+			},
+			msg:"hello"
+		}
+		greet.welcome = 'Jack';
+		console.log(greet.msg);
+
+		var  cal = {
+			num:0,
+			get  add(){
+				return  this.num + 5;
+			}
+		}
+		console.log(cal.add);
+
+		//利用Object.defineProperty将setter添加到现有对象 下面的cal表示方法名
+		var foo = {num:0}
+		Object.defineProperty(foo,'cal',{
+			set:function(x){
+				this.num = this.num+x;
+			}
+		});
+		foo.cal = 9;
+		console.log(foo.num);//9
+
+		//使用Object.defineProperty将getter添加到现有对象
+		var fooGet = {num:11};
+		Object.defineProperty(fooGet,'getNum',{
+			get:function(x){
+				return this.num+1;
+			}
+		});
+		console.log(fooGet.getNum)//12
+	</script>
+	JavaScript 学习！
+</body>
+</html>

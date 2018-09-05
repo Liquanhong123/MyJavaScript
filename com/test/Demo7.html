@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>工作中常用到的ES6语法</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+	//模块字符串
+	//${}占位
+	var name = "Lixiaohong";
+	var age = 22;
+	console.log(`hello I am ${name} My age is ${age}`);
+	//includes(str,index)：如果检测到指定文本，返回true，否则false
+	let t = "abcdefg";
+	if(t.includes('cde')){
+		console.log("includes 检测到了");
+	}
+	//startsWith(str, index)：如果在字符串起始部分检测到指定文本，返回true，否则返回false。
+	if(t.startsWith('ab')){
+		console.log("startsWith 检测到了");
+	}
+	//endsWith(str, index)：如果在字符串的结束部分检测到指定文本，返回true，否则返回false。
+	if(t.endsWith('fg')){
+		console.log("endsWith 检测到了");
+	}
+	//箭头函数 左边表示输入的参数，右边表示输出的结果
+	const arr = [5,10];
+	const s = arr.reduce((sum,item)=>sum+item);
+	console.log(s);
+
+	function Man(){
+		this.age = 22;
+		return ()=>this.age+1;
+	}
+	var man = new Man();
+	console.log(man());//23
+
+	const arr1 = [10,30,40,20];
+	const s1 = arr1.sort((a,b)=>a-b);
+	console.log(s1);
+
+	//**Set操作大全**
+	/*let set = new Set();
+	//Set转化为数组
+	let arr2 = Array.from(set);
+	//let arr2 = [...set];
+	//操作方法
+	set.add(1);
+	console.log(set.has(1));//Array中的indexOf
+	set.clear();//清除所有值
+	set.keys();//返回键名的遍历器
+	set.values();//返回键值的遍历器
+	set.entries();//返回键值对的遍历器
+	set.forEach();//循环遍历每一个值(和Array的方法一致)
+	for(let key of set.keys()){}
+	for(let val of set.values()){}
+	for(let entry of set.entries()){}
+
+	//**Map操作大全**
+	let map = new Map();
+	//实例属性(继承自Map)
+	map.constructor === Map;
+	map.size;
+	//操作方法
+	map.set(1,2);
+	console.log(map.get(1));
+	map.delete(1);
+	map.has(1);
+	map.clear;
+	map.keys();//返回键名的遍历器
+	map.values();//返回键值的遍历器
+	map.entries();//返回键值对的遍历器
+	map.forEach();//循环遍历每一个值(和Array的方法一致)*/
+
+	//find():传入一个回调函数，找到数组中符合当前搜索规则的第一个元素，返回它
+	const arrFind = [1,"2",3,3,"2"];
+	console.log(arrFind.find(n=>typeof n==="number"));//1
+	//fill(value,start,end)用新元素替换掉数组内的元素，可以指定替换下标范围
+	console.log(arrFind.fill(4,0,1));//[4, "2", 3, 3, "2"]
+	//copyWithin(target,start,end)：选择数组的某个下标，从该位置开始复制数组元素，默认从0开始复制。也可以指定要复制的元素范围
+	
+	//参考链接：https://mp.weixin.qq.com/s/ixqEK-Za0_rjk54plWM1Ig
+	</script>
+	JavaScript 学习！
+</body>
+</html>
